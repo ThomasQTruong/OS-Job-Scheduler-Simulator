@@ -33,3 +33,22 @@ five jobs is given as follows (burst time in ms):
   4. FCFS uses the order of the jobs, Job1, Job2, Job3, ...
 - You can implement the algorithms in your choice of data structures based on the program language of your choice.
   - Note that you always try your best to give the most efficient program for each problem.
+
+## Requirements
+- [Python3](https://www.python.org/downloads/)
+- [Pandas](https://pandas.pydata.org/)
+
+## Usage
+### Unix
+  1. Change to ./src directory: `cd src`.
+  2. Run any algorithm in this format: `python3 [algorithm].py [data file]`.
+      - Example: `python3 round_robin1.py ../test/job.txt`.
+      - Could also be `python` instead of `python3` depending on installation.
+### Windows
+  1. Open a terminal.
+  2. Change to the `.\src` directory.
+      - Same drive: `cd [Folder Location]\src`
+      - Different drive: `cd /d [Folder Location]\src`
+  3. Run any algorithm in this format: `python3 [algorithm].py [data file]`.
+      - Example: `python3 round_robin1.py ..\test\job.txt`.
+      - Could also be `python` instead of `python3` depending on installation.
