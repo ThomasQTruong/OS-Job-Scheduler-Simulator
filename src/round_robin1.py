@@ -6,8 +6,17 @@
  * Copyright (c) 2024, Thomas Truong
 """
 
-class RoundRobin1:
-  """
-    The simulation of the OS's Round Robin algorithm with time-slice = 2.
-  """
-  pass
+import sys
+import job_reader
+
+
+def main(file_name):
+  # Obtain the jobs from the file.
+  jobs = job_reader.read_file(file_name)
+
+  for job in jobs:
+    print(job.name, job.duration)
+
+
+if __name__ == "__main__":
+  main(sys.argv[1])

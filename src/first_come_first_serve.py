@@ -5,8 +5,40 @@
  * Copyright (c) 2024, Thomas Truong
 """
 
-class FirstComeFirstServe:
+import sys
+import job_reader
+import pandas as pd
+
+
+COLUMNS = ["Job", "Start", "End", "Completed"]
+
+
+def main(file_name):
+  # Obtain the jobs from the file and apply FCFS algorithm.
+  df = pd.DataFrame(data=FCFS(job_reader.read_file(file_name)), columns=COLUMNS)
+  print(df)
+
+
+def FCFS(jobs):
   """
-    The simulation of the OS's First Come First Serve algorithm.
+   * The First-Come-First-Serve algorithm.
+   *
+   * @param jobs - the list of jobs.
+   * @return list - the list of data: [name, start, end, completed?].
   """
-  pass
+  time = 0
+  data = []
+
+  for job in jobs:
+    duration = job.duration
+    # Run the job.
+    job.run(job.duration)
+    # Save data.
+    data.append([job.name, time, time + duration, job.duration == 0])
+    time += duration
+
+  return data
+
+
+if __name__ == "__main__":
+  main(sys.argv[1])
