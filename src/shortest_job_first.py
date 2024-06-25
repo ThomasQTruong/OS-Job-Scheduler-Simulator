@@ -22,6 +22,9 @@ def main(file_name):
   # Apply SJF algorithm.
   df = pd.DataFrame(data=SJF(jobs), columns=COLUMNS)
   print(df)
+  # Calculate and print average turnaround time (sum of end times / length).
+  average_time = df.where(df[COLUMNS[3]])[COLUMNS[2]].sum() / len(jobs)
+  print(f"Average Turnaround Time: {average_time}")
 
 
 def SJF(jobs):

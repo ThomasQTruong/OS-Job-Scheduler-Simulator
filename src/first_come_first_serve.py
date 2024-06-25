@@ -15,8 +15,12 @@ COLUMNS = ["Job", "Start", "End", "Completed"]
 
 def main(file_name):
   # Obtain the jobs from the file and apply FCFS algorithm.
-  df = pd.DataFrame(data=FCFS(job_reader.read_file(file_name)), columns=COLUMNS)
+  jobs = job_reader.read_file(file_name)
+  df = pd.DataFrame(data=FCFS(jobs), columns=COLUMNS)
   print(df)
+  # Calculate and print average turnaround time (sum of end times / length).
+  average_time = df.where(df[COLUMNS[3]])[COLUMNS[2]].sum() / len(jobs)
+  print(f"Average Turnaround Time: {average_time}")
 
 
 def FCFS(jobs):

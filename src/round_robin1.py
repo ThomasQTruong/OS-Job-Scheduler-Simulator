@@ -17,9 +17,14 @@ COLUMNS = ["Job", "Start", "End", "Completed"]
 
 def main(file_name):
   # Obtain the jobs from the file and apply RR-2 algorithm.
-  df = pd.DataFrame(data=RR(job_reader.read_file(file_name), TIME_SLICE),
+  jobs = job_reader.read_file(file_name)
+  jobs_length = len(jobs)
+  df = pd.DataFrame(data=RR(jobs, TIME_SLICE),
                     columns=COLUMNS)
   print(df)
+  # Calculate and print average turnaround time (sum of end times / length).
+  average_time = df.where(df[COLUMNS[3]])[COLUMNS[2]].sum() / jobs_length
+  print(f"Average Turnaround Time: {average_time}")
 
 
 def RR(jobs, time_slice):
