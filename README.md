@@ -44,6 +44,8 @@ five jobs is given as follows (burst time in ms):
   2. Run any algorithm in this format: `python3 [algorithm].py [data file]`.
       - Example: `python3 round_robin1.py ../test/job.txt`.
       - Could also be `python` instead of `python3` depending on installation.
+      - Can run trial with: `python3 trial_simulator.py`.
+        - Edit file for different settings.
 ### Windows
   1. Open a terminal.
   2. Change to the `.\src` directory.
@@ -52,3 +54,5 @@ five jobs is given as follows (burst time in ms):
   3. Run any algorithm in this format: `python3 [algorithm].py [data file]`.
       - Example: `python3 round_robin1.py ..\test\job.txt`.
       - Could also be `python` instead of `python3` depending on installation.
+      - Can run trial with: `python3 trial_simulator.py`.
+        - Edit file for different settings.
