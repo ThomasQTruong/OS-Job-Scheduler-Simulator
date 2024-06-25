@@ -8,14 +8,20 @@
 
 import sys
 import job_reader
+import pandas as pd
+
+
+COLUMNS = ["Job", "Start", "End", "Completed"]
 
 
 def main(file_name):
-  # Obtain the jobs from the file.
-  jobs = job_reader.read_file(file_name)
+  # Obtain the jobs from the file and apply RR5 algorithm.
+  df = pd.DataFrame(data=RR5(job_reader.read_file(file_name)), columns=COLUMNS)
+  print(df)
 
-  for job in jobs:
-    print(job.name, job.duration)
+
+def RR5(jobs):
+  pass
 
 
 if __name__ == "__main__":

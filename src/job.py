@@ -18,6 +18,16 @@ class Job:
     self.duration = duration
 
 
+  def __lt__(self, other):
+    """
+     * Overrides the less-than operator for comparing jobs.
+     *
+     * @param other - the other job to compare with.
+     * @return boolean - if the current job is less than the other job.
+    """
+    return self.duration < other.duration
+
+
   def run(self, duration):
     """
      * Runs the job.

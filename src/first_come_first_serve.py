@@ -22,6 +22,7 @@ def main(file_name):
 def FCFS(jobs):
   """
    * The First-Come-First-Serve algorithm.
+   * Runs the jobs based on which came first.
    *
    * @param jobs - the list of jobs.
    * @return list - the list of data: [name, start, end, completed?].
